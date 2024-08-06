@@ -1,0 +1,1 @@
+# tradutor-gualin-do-ttk
