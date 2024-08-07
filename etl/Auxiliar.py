@@ -37,8 +37,8 @@ def add_words():
 
 if __name__ == '__main__':
     Base.metadata.create_all(engine)
-    add_words() 
-    session.close()
+    # add_words() 
+    # session.close()
 
 
 
