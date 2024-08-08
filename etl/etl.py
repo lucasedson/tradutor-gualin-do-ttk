@@ -2,11 +2,18 @@ import requests
 from bs4 import BeautifulSoup
 from lxml import etree
 from auxiliar import session, Hash_table
+from unidecode import unidecode
 
 
 
-def inverte_silaba(silaba):
+def inverte_silaba(word, silaba):
     lista_silaba = silaba.split("-")
+
+    palavra_original = silaba.replace("-", "")
+
+
+    if unidecode(word) != unidecode(palavra_original):
+        return ""
     
     silaba = "".join(reversed(lista_silaba))
 
@@ -63,7 +70,7 @@ def transforma_gualin():
             
             try:
                 silaba = list_sl[1]
-                silaba = inverte_silaba(silaba)
+                silaba = inverte_silaba(word,silaba)
                 print(word, "-->" ,silaba)
 
                 insere_palavra_gualin(indice, silaba)
